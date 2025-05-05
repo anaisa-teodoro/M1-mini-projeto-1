@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflorestamento App - Carregando...</title>
+    <style>
+        /* Estilo simples para a tela de carregamento */
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+        .loading-message { text-align: center; color: #333; }
+        .loading-spinner { border: 4px solid rgba(0, 0, 0, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: #4e8162; animation: spin 1s ease infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loading-message">
+        <h1>Bem-vindo ao Reflorestar!</h1>
+        <p>Verificando sua sessão...</p>
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+        // Script de redirecionamento imediato
+        (function() {
+            const userStorageKey = 'usuarioReflorestamento'; // Chave padrão
+            const userData = localStorage.getItem(userStorageKey);
+
+            // Define o destino baseado na existência de dados do usuário
+            const destination = userData ? 'perfil.html' : 'cadastro_usuario.html';
+
+            // Redireciona o usuário
+            window.location.replace(destination);
+        })();
+    </script>
+</body>
+</html>

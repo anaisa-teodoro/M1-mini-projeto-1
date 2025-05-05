@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflorestamento - Relatório</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="dashboard">
+         <aside class="sidebar">
+             <div class="sidebar-content">
+                 <div class="logo"><i class="ri-plant-line"></i> <span>Reflorestar</span></div>
+                 <nav class="sidebar-items">
+                     <a href="perfil.html" class="sidebar-item" id="nav-perfil"><i class="ri-user-line"></i> <span>Perfil</span></a>
+                     <a href="cadastro_acao.html" class="sidebar-item" id="nav-acao"><i class="ri-add-circle-line"></i> <span>Registrar Ação</span></a>
+                     <a href="relatorio.html" class="sidebar-item" id="nav-relatorio"><i class="ri-file-list-3-line"></i> <span>Relatório</span></a>
+                     <a href="destaques.html" class="sidebar-item" id="nav-destaques"><i class="ri-star-line"></i> <span>Destaques</span></a>
+                 </nav>
+             </div>
+              <div class="sidebar-footer">
+                  <div id="logout-btn-container">
+                       <button id="logout-btn" class="sidebar-item logout-btn"><i class="ri-logout-box-r-line"></i> <span>Sair</span></button>
+                  </div>
+                  <div id="login-btn-container" style="display: none;"> <a href="cadastro_usuario.html" class="sidebar-item login-btn"><i class="ri-user-add-line"></i> <span>Cadastrar / Entrar</span></a>
+                  </div>
+              </div>
+         </aside>
+
+         <main class="main-container">
+              <div class="top-bar">
+                  <h1><i class="ri-file-list-3-line"></i> Relatório de Ações</h1>
+                   <button onclick="goBack()" class="btn btn-back"><i class="ri-arrow-left-line"></i> Voltar</button>
+              </div>
+              <div class="content-area">
+                  <form id="report-search-form" class="card search-form" style="display: flex; gap: var(--gap-base); align-items: flex-end; flex-wrap: wrap;">
+                      <div class="form-group" style="flex: 1 1 200px;">
+                          <label for="search-user">Buscar por Usuário</label>
+                          <input type="text" id="search-user" placeholder="Nome ou ID do usuário">
+                      </div>
+                      <div class="form-group" style="flex: 1 1 200px;">
+                          <label for="search-species">Filtrar por Espécie</label>
+                          <select id="search-species">
+                              </select>
+                      </div>
+                      <button type="submit" class="btn" style="flex: 0 0 auto;"><i class="ri-search-line"></i> Buscar</button>
+                  </form>
+
+                  <div id="results-container" class="report-table-container">
+                       <p class="text-center" style="padding: var(--gap-large);">Carregando registros...</p>
+                       <table class="results-table hidden" id="results-table">
+                           <thead>
+                               <tr>
+                                   <th>Usuário</th>
+                                   <th>Espécie</th>
+                                   <th class="col-quantity">Quantidade</th>
+                                   <th class="col-date">Data do Registro</th>
+                               </tr>
+                           </thead>
+                           <tbody id="results-table-body">
+                               </tbody>
+                       </table>
+                  </div>
+              </div>
+         </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
